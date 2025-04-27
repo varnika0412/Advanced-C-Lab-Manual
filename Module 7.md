@@ -38,6 +38,7 @@ printf("Age:%d\nName:%svaccine:%d\neligibility:yes",e.age,e.n,e.age);
 }
 ```
 Output:
+
 ![image](https://github.com/user-attachments/assets/0ff2f74c-b505-4897-be62-63b88deeccdc)
 
 
