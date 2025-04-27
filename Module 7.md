@@ -62,8 +62,24 @@ Algorithm:
 7.	Return 0
  
 Program:
-
-//type your code here
+#include<stdio.h> 
+```
+struct numbers
+{
+int a; 
+int b;
+}n;
+int add(struct numbers n); 
+int main()
+{
+scanf("%d %d ",&n.a,&n.b);
+printf("%d",add(n));
+}
+int add(struct numbers n)
+{
+return n.a+n.b;
+}
+```
 
 
 
@@ -71,7 +87,8 @@ Program:
 Output:
 
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/bac0fa04-af98-4ab4-a7a8-2acbe450ff44)
+
 
 
 
@@ -104,8 +121,20 @@ Use scanf to input the file name into the name array.
 5.	Return 0 to indicate successful program execution.
  
 Program:
-
-//type your code here
+```
+#include <stdio.h> 
+int main()
+{
+FILE *p;
+char name[30]; 
+scanf("%s",name);
+printf("%s File Created Successfully",name); 
+p=fopen("name","w");
+printf("\n%s File Opened",name); 
+fclose(p);
+printf("\n%s File Closed",name);
+}
+```
 
 
 
@@ -113,15 +142,7 @@ Program:
 Output:
 
 
-//paste your output here
-
-
-
-
-
-
-
-
+![image](https://github.com/user-attachments/assets/ef42033c-7467-48fa-bb0d-92ce67b18d80)
 
 
 
@@ -151,20 +172,30 @@ Use scanf to input the file name into the name array and the number of strings i
 5.	Return 0 to indicate successful program execution.
  
 Program:
+```
+#include <stdio.h> 
+int main()
+{
+FILE *p;
+char name[20]; 
+int num;
+char text[50]; 
+scanf("%s%d",name,&num); 
+p=fopen("name","w"); 
+printf("%s Opened",name); 
+for(int i=0;i<num;i++)
+{
+scanf("%s",text); 
+fputs(text,p);
+}
+printf("\nData added Successfully");
 
-//type your code here
-
-
-
+}
+```
 
 Output:
 
-
-//paste your output here
-
-
-
-
+![image](https://github.com/user-attachments/assets/7a49d896-b067-4185-b609-e2a5ddd26b78)
 
 
 Result:
@@ -205,16 +236,46 @@ Algorithm:
 13.End the program by returning 0.
 
 Program:
+```
 
-//type your code here
-
+#include <stdio.h>
+#include <stdlib.h>
+struct Subject
+{
+    char name[20];
+    int marks;
+};
+int main()
+{
+    int i,n;
+    scanf("%d",&n);
+    struct Subject *s = (struct Subject *)malloc(n*sizeof(struct Subject));
+    if(s==NULL)
+    {
+        printf("Memory Alocation Failed\n");
+        return 1;
+    }
+    for(i=0;i<n;i++)
+    {
+        scanf("%s %d",s[i].name,&s[i].marks);
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("%s  %d\n",s[i].name,s[i].marks);
+    }
+    
+   free(s);
+   return 0;
+}
+```
 
 
 
 Output:
 
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/58a105f6-e6c1-441f-a84e-9d9a09cfe332)
+
 
 
 
