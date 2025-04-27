@@ -15,20 +15,52 @@ Algorithm:
 4.	Exit the program.
  
 Program:
-
-//type your code here
+```
+#include<stdio.h>
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    switch (n)
+    {
+        case 71:
+            printf("seventy one");
+            break;
+        case 72: 
+            printf("seventy two");
+            break;
+        case 73:
+            printf("seventy three");
+            break;
+        case 74:
+            printf("seventy four");
+            break;
+        case 75:
+            printf("seventy five");
+            break;
+	        case 76:
+	            printf("seventy six");
+	            break;
+	        case 77:
+	            printf("seventy seven");
+	            break;
+	        case 78:
+	            printf("seventy eight");
+	            break;
+	        case 79:
+	            printf("seventy nine");
+	            break;
+         default:
+              printf("Greater than 79");
+        }
+}
+```
 
 
 
 
 Output:
-
-
-//paste your output here
-
-
-
-
+![image](https://github.com/user-attachments/assets/627a7d2f-85cd-4a01-a833-a7b4b7298c45)
 
 
 Result:
@@ -46,21 +78,33 @@ Algorithm:
 6.	End
  
 Program:
-
-//type your code here
+```
+#include<stdio.h>
+#include<ctype.h>
+#include<string.h>
+int main()
+{
+    char s[100];
+    int f[10]={0};
+    scanf("%s",s);
+    for(int i=0;s[i]!='\0';i++){
+    if(isdigit(s[i]))
+    {
+        int d= s[i]- '0';
+        f[d]++;
+    }
+    }
+    for(int i=0;i<10;i++){
+    printf("%d ",f[i]);
+    }
+}
+```
 
 
 
 
 Output:
-
-
-//paste your output here
-
-
-
-
-
+![image](https://github.com/user-attachments/assets/8dacc0ba-af3c-4bf5-8d49-f8c287b9ad47)
 
 Result:
 Thus, the program is verified successfully
@@ -83,20 +127,62 @@ Free the memory allocated for each string in s Free the memory allocated for s
 7.	End
  
 Program:
-
-//type your code here
-
+```
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int next_permutation(int n, char **s)
+{
+    int k = -1;
+    for (int i = 0; i < n-1; i++) {
+        if (strcmp(s[i], s[i+1]) < 0)
+            k = i;
+    }
+    if (k == -1) 
+        return 0; 
+    int l = -1;
+    for (int i = k+1; i < n; i++) {
+        if (strcmp(s[k], s[i]) < 0)
+            l = i;
+    }
+    char *tmp = s[k];
+    s[k] = s[l];
+    s[l] = tmp;
+    int i = k+1, j = n-1;
+    while (i < j) {
+        tmp = s[i];
+        s[i++] = s[j];
+        s[j--] = tmp;
+    }
+    return 1; 
+}
+int main()
+{
+	char **s;
+	int n;
+	scanf("%d", &n);
+	s = calloc(n, sizeof(char*));
+	for (int i = 0; i < n; i++)
+	{
+		s[i] = calloc(n, sizeof(char));
+		scanf("%s", s[i]);
+	}
+	do
+	{
+		for (int i = 0; i < n; i++)
+			printf("%s%c", s[i], i == n - 1 ? '\n' : ' ');
+	} while (next_permutation(n, s));
+	for (int i = 0; i < n; i++)
+		free(s[i]);
+	free(s);
+	return 0;
+}
+```
 
 
 
 Output:
-
-
-//paste your output here
-
-
-
-
+![image](https://github.com/user-attachments/assets/7274add5-1131-4268-a529-3ab35781f813)
 
 
 Result:
@@ -116,20 +202,31 @@ Algorithm:
 7.	End
  
 Program:
-
-//type your code here
-
-
+```
+#include<stdio.h>
+int main()
+{
+int n,i,j,min;
+scanf("%d",&n);
+int len=n*2-1; 
+for (i=0;i<len;i++)
+{
+for (j=0;j<len;j++)
+{
+min=i<j?i:j;
+min=min<len-i-1?min:len-1-i;
+min=min<len-j-1?min:len-1-j;
+printf("%d ",n-min);
+}
+printf("\n");
+}
+return 0;
+}
+```
 
 
 Output:
-
-
-//paste your output here
-
-
-
-
+![image](https://github.com/user-attachments/assets/0a5b18a1-5131-4d0f-9b3b-4af3105889b0)
 
 
 Result:
@@ -155,20 +252,24 @@ o	Call the square() function and display the result.
 5.	End.
 
 Program:
-
-//type your code here
-
-
-
+```
+#include <stdio.h>
+void square();
+int main(){
+    
+    square();
+    return 0;
+}
+void square(){
+    int a;
+    scanf("%d",&a);
+    float ans = a*a;
+    printf("The square of %d is : %.2f",a,ans);
+}
+```
 
 Output:
-
-
-//paste your output here
-
-
-
-
+![image](https://github.com/user-attachments/assets/548394ba-f822-448c-ba71-1d4851ef9905)
 
 
 Result:
