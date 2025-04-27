@@ -14,9 +14,29 @@ Else
 5.	Print details (e.age, e.n)
 6.	Return 0
  
-Program:
+Program
+```
+#include<stdio.h> 
+struct eligib
+{
+int age; 
+char n[4];
+};
+int main()
+{
+struct eligib e; 
+scanf("%d%s",&e.age,e.n);
+if(e.age<=6)
+{
+printf("Age:%d\nName:%svaccine:%d\neligibility:no",e.age,e.n,e.age);
+}
+else
+{
 
-//type your code here
+printf("Age:%d\nName:%svaccine:%d\neligibility:yes",e.age,e.n,e.age);
+}
+}
+```
 
 
 Output:
